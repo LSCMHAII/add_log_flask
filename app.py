@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 
 from add_log import add_log
@@ -5,11 +6,11 @@ from add_log import add_log
 app = Flask(__name__)
 
 SERVICE_NAME = "add_log"
-BASE_PATH = "./test_log/"
-# BASE_PATH = os.getenv("BASE_PATH") or "/nas_data/"
+# BASE_PATH = "./test_log/"
+BASE_PATH = os.getenv("BASE_PATH") or "/nas_data/"
 
-# if not (os.path.isdir(BASE_PATH) and os.access(BASE_PATH, os.R_OK)):
-#     BASE_PATH = "/app/nas_data/"
+if not (os.path.isdir(BASE_PATH) and os.access(BASE_PATH, os.R_OK)):
+    BASE_PATH = "/app/nas_data/"
 
 print('BASE_PATH: ', BASE_PATH)
 
