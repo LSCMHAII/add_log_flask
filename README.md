@@ -15,13 +15,13 @@ Content will be divided into lines by the newline character `\n` and each line w
 #### Request Body
 ```json
 {
-    "dir_name": "logs",
+    "dir_name": "logs/",
     "file_name": "log_20260228.txt",
     "content": "[20260228][INFO] Validate job complete without error."
 }
 
 {
-    "dir_name": "logs",
+    "dir_name": "logs/",
     "file_name": "log_20260228.txt",
     "content": "[20260228][INFO] Validate job complete without error.\n[20260228][ERROR] Validate job failed with error code 123."
 }
