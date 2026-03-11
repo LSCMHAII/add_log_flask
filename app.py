@@ -19,7 +19,7 @@ APP_CONST = {
     'BASE_PATH': BASE_PATH,
 }
 
-@app.route("/", methods=['POST'])
+@app.route("/run", methods=['POST'])
 def main():
     """
         dir_name(string): "/abc_project/debug/"
