@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import os
 
 def add_log(app_const, dir_name, file_name, content):
@@ -13,9 +13,15 @@ def add_log(app_const, dir_name, file_name, content):
     
     ## Divide content by \n and write to file
     content_lines = content.split('\n')
+
+    # 定義 UTC+8 時區
+    utc_plus_8 = timezone(timedelta(hours=8))
+
+    # 取得該時區的當前時間
+    now_utc_8 = datetime.now(utc_plus_8)
     
     ## Add timestamp to each line
-    timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+    timestamp = now_utc_8.strftime("[%Y-%m-%d %H:%M:%S]")
     content_lines = [f"{timestamp} {line}" for line in content_lines]
     
     # Create file if not exists, else append to file
