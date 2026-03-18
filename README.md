@@ -6,6 +6,16 @@ This is a simple Flask application that provides an API endpoint to add log entr
 - Add log entries to a specified file in a specified directory.
 - Configurable base path for log storage via environment variables.
 
+## Simple setup locally
+1. Install dependency:
+```bash
+pip install -r requirements.txt
+```
+2. Run the Flask application:
+```bash
+python app.py
+```
+
 ## API Endpoint
 
 ### POST /run
