@@ -20,10 +20,9 @@ python app.py
 
 ### POST /run
 This endpoint accepts a JSON payload to specify the `dir_name`, `file_name`, and `content` to be added to the log file.
-- `dir_name`(string): The directory where the log file is located (e.g., "logs/").
-- `file_name`(string) (required): The name of the log file (e.g., "log_20260228.txt").
+- `dir_name`(string): The directory where the log file is located (e.g., "logs/"). The directory should exist.
+- `file_name`(string) (required): The name of the log file (e.g., "log_20260228.txt"). The log file will be created if it does not exist. If the file already exists, the new log entries will be appended to the existing file.
 - `content`(string) (required): The log content to be added. It can contain multiple lines separated by the newline character `\n`. Each line will be treated as a separate log entry.
-- Content will be divided into lines by the newline character `\n` and each line will be added to the log file.
 - Timestamps will be added to each log entry in the format `[YYYY-MM-DD HH:MM:SS]`.
 
 #### Request Body
